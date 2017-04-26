@@ -1,6 +1,7 @@
 # DevEnv-Generator-Website
 ## About DevEnv-Generator-Website
-This is the DevEnv-Generator web interface working with [flask](http://flask.pocoo.org/) which allow to create and manage its custom Development Environment instance 
+This is the DevEnv-Generator web interface working with [flask](http://flask.pocoo.org/)
+Its allow to create and manage its custom Development Environment instance 
 deployed automatically with [DevEnv-Generator-App](https://github.com/Skeith918/DevEnv-Generator-App).
 
 ## Installation
