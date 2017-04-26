@@ -15,7 +15,7 @@ pip install Flask
 ```
 
 ## Usage
-- To launch the interface
+- To launch the interface, run this command from the project's root
 ```
 python lance.py
 ```
