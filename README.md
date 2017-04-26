@@ -1,6 +1,6 @@
 # DevEnv-Generator-Website
 ## About DevEnv-Generator-Website
-This is the DevEnv-Generator web interface working with flask which allow to create and manage its custom Development Environment instance 
+This is the DevEnv-Generator web interface working with [flask](http://flask.pocoo.org/) which allow to create and manage its custom Development Environment instance 
 deployed automatically with [DevEnv-Generator-App](https://github.com/Skeith918/DevEnv-Generator-App).
 
 ## Installation
@@ -14,7 +14,7 @@ pip install Flask
 ```
 
 ## Usage
-- To launch the interface :
+- To launch the interface
 ```
 python lance.py
 ```
