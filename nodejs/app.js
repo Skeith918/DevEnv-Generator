@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const app = express();
 
 app.set('views', './views');
-app.set('view engine', 'html');
+app.set('view engine', 'ejs');
 
 router.get('/', function(req, res) {
   res.render('index');
