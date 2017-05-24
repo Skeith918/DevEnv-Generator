@@ -1,0 +1,28 @@
+{%- extends "base.html" %}
+{%- block content %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/containers.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/sidebar.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/layout.js') }}"></script>
+
+        <script type="text/javascript">
+
+            // helper functions
+
+          $(function () {
+                // initialization
+                $('#layout').w2layout(layout);
+                w2ui.layout.content('left', $().w2sidebar(sidebar));
+                w2ui.layout.content('main', $().w2grid(images));
+
+                // in memory initialization
+                $().w2grid(containers);
+                w2utils.settings.dataType = 'RESTFULL';
+
+                w2ui['sidebar'].on('click', function (event) {
+                    onClickSidebar(event);
+                });
+                initContainersGridEvents();
+            });
+
+        </script>
+{%- endblock %}
