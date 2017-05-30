@@ -42,3 +42,12 @@ app.post('/login', passport.authenticate('ldapauth', {
 }));
 
 app.listen(3000);
+
+server.on('listening', onListening);
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}

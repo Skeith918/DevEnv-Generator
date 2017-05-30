@@ -10,7 +10,9 @@
     "nodemon": "^1.11.0",
     "ejs": "2.5.6",
     "morgan": "1.8.2",
-    "serve-favicon": "2.4.3"
+    "serve-favicon": "2.4.3",
+    "consolidate": "0.14.5",
+    "swig": "1.4.2"
   },
   "repository": {
     "type": "git",

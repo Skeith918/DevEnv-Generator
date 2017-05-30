@@ -1,14 +1,14 @@
 const express = require('express');
-const router = express.Router();
+const path = require('path');
 const morgan = require('morgan');
+
 const app = express();
 
-app.set('views', './views');
-app.set('view engine', 'html');
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
-router.get('/', function(req, res) {
-  res.render('index');
-  red.end();
-});
+app.use('/modules', express.static(__dirname + '/node_modules'));
 
-module.exports = router;
+app.use(require('./controllers'));
+
+module.exports = app;
