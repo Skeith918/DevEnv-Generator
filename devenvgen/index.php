@@ -1,12 +1,13 @@
 <?php
-$erreur='';
-if (isset($_POST['connexion']) && $_POST['connexion'] == 'Connexion') {
-	if ((isset($_POST['login-name']) && !empty($_POST['login-name'])) && (isset($_POST['login-pass']) && !empty($_POST['login-pass']))) {
+if ((isset($_POST['login-name']) && !empty($_POST['login-name'])) && (isset($_POST['login-pass']) && !empty($_POST['login-pass']))) {
 
     $ldaprdn  = ($_POST['login-name']);
-    $ldappass = (md5($_POST['login-pass']));
+    $ldappass = ($_POST['login-pass']);
+    $ldaphost = "DC01.vilgenis.com";
+    $ldapport = 389;
 
-    $ldapconn = ldap_connect("VSM2T-AD");
+    $ldapconn = ldap_connect($ldaphost, $ldapport);
+
     if ($ldapconn) {
 
       $ldapbind = ldap_bind($ldapconn, $ldaprdn, $ldappass);
@@ -15,21 +16,23 @@ if (isset($_POST['connexion']) && $_POST['connexion'] == 'Connexion') {
         session_start();
         $_SESSION['login-name'] = $_POST['login-name'];
         header('Location: container.php');
-        exit();
       } else {
 
         $erreur = 'Identifiant ou Mot de passe incorrect.';
-				header('Location: index.php');
-
+	header('Location: index.php');
       }
-    }
-  } else {
 
-    $erreur = 'Au moins un des champs est vide.';
+   } else {
 
-  }
+       $erreur = 'Connexion au serveur LDAP impossible';
+
+   }
+
+} else {
+
+   $erreur = 'Au moins un des champs est vide.';
+
 }
-
 
 ?>
 
