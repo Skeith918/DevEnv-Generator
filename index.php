@@ -19,11 +19,12 @@
   </nav>
 
 <div class="jumbotron">
-	<legend align="center">Liste des pages test</legend>
-	<li><a href="login.php" class="btn btn-primary">login</a></li>
-	<li><a href="/env/env.php" class="btn btn-primary">env</a></li>
-	<li><a href="/add-env/envos.php" class="btn btn-primary">add env</a></li>
-
+	<div align="center" class="form-group">
+		<legend align="center">Liste des pages test</legend>
+		<a href="login.php" class="btn btn-primary">login</a>
+		<a href="/env/env.php" class="btn btn-primary">env</a>
+		<a href="/add-env/envos.php" class="btn btn-primary">add env</a>
+	</div>
 </div>
 <?php
 ?>
