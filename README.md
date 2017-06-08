@@ -5,7 +5,8 @@ Its allow to create and manage its custom Development Environment container
 deployed automatically with [DevEnv-Generator-App](https://github.com/Skeith918/DevEnv-Generator-App).
 
 ## Installation
-- Install python 2.7 and python-pip package
+#### Linux
+- Install Nginx, PHP5 and PHP5-FPM
 ```
 sudo apt install python2.7 python-pip
 ```
@@ -13,7 +14,7 @@ sudo apt install python2.7 python-pip
 ```
 pip install Flask
 ```
-
+#### Windows
 ## Usage
 - To launch the interface, run this command from the project's root
 ```
