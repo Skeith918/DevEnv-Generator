@@ -1,7 +1,7 @@
 # DevEnv-Generator-Website
 ## À propos de DevEnv-Generator-Website
 Ceci est l'interface web de l'application DevEnv-Generator fonctionnant en HTML5 et PHP,
-Il permet, en s'authentifiant sur un serveur LDAP de pouvoir gérer / créer / détruire ses containers personnalisés (ou DevEnv)
+Il permet, en s'authentifiant sur un serveur LDAP de pouvoir gérer, créer ou détruire ses containers personnalisés (ou DevEnv)
 déployé automatiquement avec [DevEnv-Generator-App](https://github.com/Skeith918/DevEnv-Generator-App).
 
 ## Installation
