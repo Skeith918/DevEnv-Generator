@@ -1,71 +1,25 @@
-<?php
-if (isset($_POST['connexion']) && $_POST['connexion'] == 'Connexion') {
-	if ((isset($_POST['login-name']) && !empty($_POST['login-name'])) && (isset($_POST['login-pass']) && !empty($_POST['login-pass']))) {
-
-    $ldaprdn  = ($_POST['login-name']);
-    $ldappass = (md5($_POST['login-pass']));
-
-    $ldapconn = ldap_connect("ldap.vsm2t.test");
-    if ($ldapconn) {
-
-      $ldapbind = ldap_bind($ldapconn, $ldaprdn, $ldappass);
-
-      if ($ldapbind) {
-        session_start();
-        $_SESSION['login-name'] = $_POST['login-name'];
-        header('Location: container.php');
-        exit();
-      } else {
-
-        $erreur = 'Identifiant ou Mot de passe incorrect.';
-
-      }
-    }
-  } else {
-
-    $erreur = 'Au moins un des champs est vide.';
-
-  }
-}
-
-
-?>
-
-<html lang="fr">
+<!DOCTYPE html>
+<html>
 <head>
-
-    <title>Python Flask Docker</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-
+	<meta charset="UTF-8"/>
+	<title>DevEnv</title>
+	<link rel="stylesheet" type="text/css" href="http://bootswatch.com/flatly/bootstrap.css">
 </head>
 <body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/index.php">DevEnv Generator</a>
+      </div>
+    </div>
+  </nav>
 
-  <form action="index.php" method="POST">
-      <div class="login">
-	       <div class="login-screen">
-	          <div class="app-title">
-		            <h1>DevEnvGen Login</h1>
-	          </div>
-
-            <div class="login-form">
-              <div class="control-group">
-                <input type="text" class="login-field" value="<?php if (isset($_POST['login'])) echo htmlentities(trim($_POST['login'])); ?>" placeholder="identifiant" name="identifiant">
-                <label class="login-field-icon fui-user" for="login-name"></label>
-              </div>
-
-              <div class="control-group">
-                <input type="password" class="login-field" value="<?php if (isset($_POST['pass'])) echo htmlentities(trim($_POST['pass'])); ?>" placeholder="mot de passe" name="mot de passe">
-                <label class="login-field-icon fui-lock" for="login-pass"></label>
-              </div>
-
-              <input type="submit" name="connexion" value="Connexion" class="btn btn-primary btn-block" >
-              <?php
-              if (isset($erreur)) echo '<br /><br />',$erreur;
-              ?>
-              <br>
-            </div>
-          </div>
-        </div>
-      </form>
-</body>
-</html>
+<div class="jumbotron">
+	
+</div>
+<?php
+?>
