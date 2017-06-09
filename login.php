@@ -53,21 +53,51 @@ if (isset($_POST['connexion']) && $_POST['connexion'] == 'Connexion') {
     </div>
   </nav>
 
-<div class="jumbotron">
+<div class="col-lg-4">
+	<form align="center" class="form-horizontal">
+	  <fieldset>
+	    <legend>DevEnvGen Login</legend>
+	    <div class="form-group">
+	      <label for="inputUsers" class="col-lg-2 control-label">Utilisateur</label>
+	      <div class="col-lg-10">
+	        <input type="text" class="form-control" id="inputEmail" placeholder="Utilisateur">
+	      </div>
+	    </div>
+	    <div class="form-group">
+	      <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+	      <div class="col-lg-10">
+	        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+	      </div>
+	    </div>
+	    <div align="center" class="form-group">
+	      <div class="col-lg-10 col-lg-offset-2">
+	        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+	      </div>
+	    </div>
+	  </fieldset>
+	</form>
+</div>
+<!--<div class="jumbotron">
 	<fieldset>
     <legend>DevEnvGen Login</legend>
     <div class="form-group">
-      <label for="inputEmail" class="col-lg-2 control-label"></label>
+      <label align="center" for="inputEmail" class="col-sm-2 control-label"></label>
       <div class="col-lg-10">
         <input type="text" class="form-control" id="inputEmail" placeholder="Identifiant">
       </div>
     </div>
     <div class="form-group">
-      <label for="inputPassword" class="col-lg-2 control-label"></label>
+      <label align="center" for="inputPassword" class="col-sm-2 control-label"></label>
       <div class="col-lg-10">
         <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe">
 			</div>
     </div>
-</div>
+		<div class="form-group">
+      <div align="center" class="col-lg-10 col-lg-offset-2">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+	</fieldset>
+</div>-->
 </body>
 </html>
