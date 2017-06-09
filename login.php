@@ -2,15 +2,21 @@
 if (isset($_POST['connexion']) && $_POST['connexion'] == 'Connexion') {
     if ((isset($_POST['login-name']) && !empty($_POST['login-name'])) && (isset($_POST['login-pass']) && !empty($_POST['login-pass']))) {
 
-    $user  =$_POST['login-name'];
+    $login  =$_POST['login-name'];
+    $user = system("echo " .$login. " | sed s/'%20'/' '/g");
     $ldappass =$_POST['login-pass'];
     $host = 'DC01.vilgenis.com ';
     $port = 389;
-    $ldaprdn = "cn=$user,ou=Persons,dc=vilgenis,dc=com";
 
+
+    $ldaprdn = "cn=$user,ou=Persons,dc=vilgenis,dc=com";
     $ldapconn =ldap_connect("ldap://$host", $port);
+
+
     ldap_set_option($ldapconn, LDAP_OPT_PROTOCOL_VERSION, 3);
     ldap_set_option($ad, LDAP_OPT_REFERRALS, 0);
+
+
     if ($ldapconn) {
       $ldapbind =ldap_bind($ldapconn,$ldaprdn,$ldappass);
 
@@ -23,7 +29,8 @@ if (isset($_POST['connexion']) && $_POST['connexion'] == 'Connexion') {
       } else {
 
         $erreur = 'Identifiant ou Mot de passe incorrect.';
-        header('Location: index.php');
+	echo $user;
+        header('Location: /index.php');
 
       }
     }
@@ -33,7 +40,7 @@ if (isset($_POST['connexion']) && $_POST['connexion'] == 'Connexion') {
   }
 }
 
-
+?>
 
 <!DOCTYPE html>
 <html>
