@@ -14,7 +14,7 @@ sudo apt install -y nginx php5 php5-fpm php5-dev
 ```
 pecl install mongodb
 ```
--Ajoutez la ligne suivante à votre fichier /etc/php5/cli/php.ini
+- Ajoutez la ligne suivante à votre fichier /etc/php5/cli/php.ini
 ```
 extension=mongo.so
 ```
