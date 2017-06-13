@@ -31,16 +31,17 @@
       $query = array( "owner" => "" .$owner. "" );
       $cursor = $collection->find($query);
       foreach ($cursor as $document) {
-        echo '<tr>
-	<td>';echo $document["name"];echo'</td>
-	<td>';echo $document["os"];echo'</td>
-	<td>';echo $document["tools"];echo'</td>
-	<td>';echo $document["ip"];echo'</td>
-	<td>';echo $document["port"];echo'</td>
-	</tr>';
-	}
+        echo '<tr>';
+        echo '<td>' .$document["name"]. '</td>';
+        echo '<td>' .$document["os"]. '</td>';
+        echo '<td>' .$document["tools"]. '</td>';
+        echo '<td>' .$document["ip"]. '</td>';
+        echo '<td>' .$document["port"]. '</td>';
+        echo '<td><a href="delenv.php?name="' .$document["name"]. '" class="btn btn-danger btn-xs">Supprimer</a></td>';
+        echo '</tr>';
+        }
       ?>
     </tbody>
-
+  </table>
 </body>
 </html>
