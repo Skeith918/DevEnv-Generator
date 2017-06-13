@@ -8,7 +8,15 @@ déployé automatiquement avec [DevEnv-Generator-App](https://github.com/Skeith9
 #### Linux
 - Installez Nginx, PHP5 and PHP5-FPM
 ```
-sudo apt install -y nginx php5 php5-fpm
+sudo apt install -y nginx php5 php5-fpm php5-dev
+```
+- Installez le module MongoDB pour PHP5
+```
+pecl install mongodb
+```
+-Ajoutez la ligne suivante à votre fichier /etc/php5/cli/php.ini
+```
+extension=mongo.so
 ```
 - Editez ou créez un fichier dans le répertoire /etc/nginx/sites-availabe/ et mettez le code ci-dessous :
 ```
