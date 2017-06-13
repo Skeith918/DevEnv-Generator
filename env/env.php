@@ -24,35 +24,23 @@
 
     <tbody>
       <?php
-      //include "searchenv.php";
       $owner="ssnoussi";
-      $separator='"';
-      $req='db.container.find({owner : "' .$owner. '"}';
-      //$test2 = passthru('mongo localhost:27017/devenvgen --quiet --eval "' .$req. '"');
-      $test = shell_exec('/bin/echo "' .$req. '"');
-      for ($i = 1; $i <=10 ; $i++) {
-        //$name = shell_exec('/bin/echo "' .$req. '" | /usr/bin/mongo localhost:27017/devenvgen --quiet | cut -d ' .$separator. ' -f12 | head -n' .$i. '' );
-      	//$os = shell_exec('/bin/echo "' .$req. '" | /usr/bin/mongo localhost:27017/devenvgen --quiet | cut -d "' .$separator. '" -f16 | head -n' .$i. '' );
-      	//$tools = shell_exec('/bin/echo "' .$req. '" | /usr/bin/mongo localhost:27017/devenvgen --quiet | cut -d ' .$separator. ' -f20 | head -n' .$i. '' );
-        //$ip = shell_exec('/bin/echo "' .$req. '" | /usr/bin/mongo localhost:27017/devenvgen --quiet | cut -d "' .$separator. '" -f24 | head -n' .$i. '' );
-        //$port = shell_exec('/bin/echo "' .$req. '" | /usr/bin/mongo localhost:27017/devenvgen --quiet | cut -d "' .$separator. '" -f28 | head -n' .$i. '' );
-        echo '<html>
-        <tr>
-          <td>';echo $i;echo'</td>
-          <td>';echo $test;echo'</td>
-          <td>';echo "l";echo'</td>
-          <td>';echo $test2;echo'</td>
-          <td>';echo "l";echo'</td>
-          <td>';echo "l";echo'</td>
-          <td><a href="delenv.php?name=';echo $name;echo'" class="btn btn-danger btn-xs">Supprimer</a></td>
-        </tr>
-        </html>';
-      }
-
+      $m = new MongoClient();
+      $db = $m->devenvgen;
+      $collection = $db->container;
+      $query = array( "owner" => "" .$owner. "" );
+      $cursor = $collection->find($query);
+      foreach ($cursor as $document) {
+        echo '<tr>
+	<td>';echo $document["name"];echo'</td>
+	<td>';echo $document["os"];echo'</td>
+	<td>';echo $document["tools"];echo'</td>
+	<td>';echo $document["ip"];echo'</td>
+	<td>';echo $document["port"];echo'</td>
+	</tr>';
+	}
       ?>
     </tbody>
-
-
 
 </body>
 </html>
