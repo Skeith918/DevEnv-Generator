@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php include "../header.php";
 
 $owner="vvoradeth";
@@ -35,3 +36,52 @@ $result = $db->devenvgen->container->find(array( "owner" => "" .$owner. "" ));
     </tbody>
   </table>
 </body>
+=======
+<?php include "../header.php";?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DevEnvGen</title>
+    <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.css">
+
+</head>
+<body>
+
+  <table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nom du container</th>
+      <th>Système d'exploitation</th>
+      <th>Outils installés</th>
+      <th>IP</th>
+      <th>Port Ouverts</th>
+    </tr>
+  </thead>
+
+    <tbody>
+      <?php
+      $owner="ssnoussi";
+      $m = new MongoClient();
+      $db = $m->devenvgen;
+      $collection = $db->container;
+      $query = array( "owner" => "" .$owner. "" );
+      $cursor = $collection->find($query);
+      foreach ($cursor as $document) {
+        echo '<tr>';
+        echo '<td>' .$document["name"]. '</td>';
+        echo '<td>' .$document["os"]. '</td>';
+        echo '<td>' .$document["tools"]. '</td>';
+        echo '<td>' .$document["ip"]. '</td>';
+        echo '<td>' .$document["port"]. '</td>';
+        echo '<td><a href="delenv.php?name="' .$document["name"]. '" class="btn btn-danger btn-xs">Supprimer</a></td>';
+        echo '</tr>';
+        }
+      ?>
+    </tbody>
+  </table>
+</body>
+</html>
+>>>>>>> b81904ae850442ac13e95a13ae06182515906ccf
