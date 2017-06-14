@@ -20,6 +20,11 @@
         <input type="text" class="form-control" id="inputnamecontainer" placeholder="Nom de votre container">
       </div>
 
+      <div class="form-group" disable>
+        <label for="os" class="field">Système d'exploitation</label>
+        <input type="text" class="form-control" id="os" placeholder="Windows" $
+      </div>
+
       <div class="form-group">
         <label for="selectwebserv">Serveur Web</label>
         <select class="form-control" id="selectwebserv">

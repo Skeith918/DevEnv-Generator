@@ -16,8 +16,13 @@
       <legend align="center">Créer un DevEnv - Sélection des outils</legend>
 
       <div class="form-group">
-        <label for="inputnamecontainer" class="field">Nom du Container</label>
-        <input type="text" class="form-control" id="inputnamecontainer" placeholder="Nom de votre container">
+        <label for="namecontainer" class="field">Nom du Container</label>
+        <input type="text" class="form-control" id="namecontainer" placeholder="Nom de votre container">
+      </div>
+
+      <div class="form-group" disable>
+        <label for="os" class="field">Système d'exploitation</label>
+        <input type="text" class="form-control" id="os" placeholder="Linux (Debian 8)" disabled="">
       </div>
 
       <div class="form-group">
@@ -31,7 +36,7 @@
 
       <div class="form-group">
         <label for="selectdb">Base de données</label>
-        <select class="form-control" id="exampleSelect1">
+        <select class="form-control" id="selectdb">
           <option>Aucun</option>
           <option>MySQL</option>
           <option>MariaDB</option>
@@ -43,26 +48,26 @@
             <div class="col-lg-10">
               <div class="radio">
                 <label>
-                  <input type="checkbox" id="python" value="python">
+                  <input type="checkbox" id="tools1" value="python">
                   Python
                 </label>
               </div>
               <div class="radio">
                 <label>
-                  <input type="checkbox" id="ruby" value="ruby">
+                  <input type="checkbox" id="tools2" value="ruby">
                   Ruby
                 </label>
               </div>
               <div class="radio">
                 <label>
-                  <input type="checkbox" id="nodejs" value="nodejs">
+                  <input type="checkbox" id="tools3" value="nodejs">
                   NodeJS
                 </label>
               </div>
             </div>
           </div>
 
-      <input type="submit" name="connexion" value="Suite" class="btn btn-primary btn-block" >
+      <input type="submit" name="suite" value="Suite" class="btn btn-primary btn-block" >
     </fieldset>
   </form>
 </div>

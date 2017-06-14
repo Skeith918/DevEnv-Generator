@@ -1,7 +1,9 @@
 <?php
-$name = "testcontainer";
-$os = "linux";
-$tools = "nginx, mongodb, python";
-$ip = "172.16.52.141";
-$port = "22, 80, 443, 27017";
+$owner = "vvoradeth";
+$name = $_GET['name'];
+$db = new MongoClient();
+$db->devenvgen->container->remove(array( "owner" => "" .$owner. "", "name" => "" .$name. ""));
+//shell_exec('/usr/bin/docker stop ' .$name. '');
+//shell_exec('/usr/bin/docker rm ' .$name. '');
+header('Location: /env/env.php');
 ?>

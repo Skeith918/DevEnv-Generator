@@ -1,6 +1,13 @@
-<?php include "../header.php";?>
+<?php
+//include "../header.php";
 
-<!DOCTYPE html>
+$container = $_POST['namecontainer'];
+$os = $_POST['os'];
+//$tools = ""+ .$_POST['selectwebserv']. +", "+ .$_POST['selectdb']. +","+ .$_POST['tools1']. +", "+ .$_POST['tools2']. +", "+ .$_POST['tools3']. +"";
+
+echo $container;
+echo $os;
+/*echo '<!DOCTYPE html>
 <html lang="fr">
 <head>
     <title>DevEnvGen</title>
@@ -11,8 +18,16 @@
 
 <body>
 <div class="jumbotron">
-  
+
+<table class="table table-striped table-hover ">
+    <tr>
+      <td>Nom du container : ' .$container. '</td>
+      <td>Système : ' .$os. '</td>
+      <td>Outils installés :  ' .$tools. '</td>
+    </tr>
+</table>
 </div>
 </body>
 
-</html>
+</html>';*/
+?>

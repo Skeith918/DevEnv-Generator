@@ -2,8 +2,12 @@
 <html>
 <head>
 	<meta charset="UTF-8"/>
-	<title>DevEnv</title>
-	<link rel="stylesheet" type="text/css" href="http://bootswatch.com/flatly/bootstrap.css">
+	<title>DevEnvGen</title>
+	<link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
+	<link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.css">
+
+</head>
+
 </head>
 <body>
   <nav class="navbar navbar-default">
