@@ -24,6 +24,7 @@
 		<a href="login.php" class="btn btn-primary">login</a>
 		<a href="/env/env.php" class="btn btn-primary">env</a>
 		<a href="/add-env/envos.php" class="btn btn-primary">add env</a>
+		<a href="/admin/admin.php" class="btn btn-primary">admin</a>
 	</div>
 </div>
 <?php
