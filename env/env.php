@@ -1,6 +1,6 @@
 <?php include "../header.php";
 
-$owner="ssnoussi";
+$owner="";
 $db = new MongoClient();
 $result = $db->devenvgen->container->find(array( "owner" => "" .$owner. "" ));
 
