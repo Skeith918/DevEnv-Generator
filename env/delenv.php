@@ -1,5 +1,5 @@
 <?php
-$owner = "vvoradeth";
+$owner = "";
 $name = $_GET['name'];
 $db = new MongoClient();
 $db->devenvgen->container->remove(array( "owner" => "" .$owner. "", "name" => "" .$name. ""));
